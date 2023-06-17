@@ -2,9 +2,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="flex items-center justify-between py-2">
+    <footer className="container mx-auto flex items-center justify-between py-2">
       <span className="text-[#8b8989]">
-        ©2023 Lamamia. All rights reserved.
+        ©2023 NextBlog. All rights reserved.
       </span>
       <div className="flex">
         <Image
