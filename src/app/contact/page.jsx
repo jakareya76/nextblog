@@ -10,7 +10,11 @@ const ContactPage = () => {
       </h1>
       <div className="flex items-center justify-center gap-16 py-16">
         <div className="hidden md:flex md:justify-end md:w-1/2">
-          <Image src={ContactImg} className="w-[500px] object-cover" />
+          <Image
+            src={ContactImg}
+            alt="contact"
+            className="w-[500px] object-cover"
+          />
         </div>
         <div className="flex items-center justify-center w-full md:justify-start md:w-1/2">
           <form className="flex flex-col w-[80%] gap-5">

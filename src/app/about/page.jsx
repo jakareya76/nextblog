@@ -7,6 +7,7 @@ const AboutPage = () => {
       <div className="relative w-full h-[300px]">
         <Image
           src="https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          alt="about"
           fill={true}
           className="object-cover grayscale"
         />
