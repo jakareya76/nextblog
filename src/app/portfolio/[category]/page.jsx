@@ -17,7 +17,7 @@ const Category = ({ params }) => {
 
   return (
     <>
-      <h4 className="text-2xl text-center font-extrabold px-2 lg:text-left">
+      <h4 className="text-4xl text-green-500 uppercase text-center font-extrabold px-2 lg:text-left">
         {params.category}
       </h4>
       {data.map((item) => (
