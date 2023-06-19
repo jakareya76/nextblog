@@ -5,23 +5,18 @@ import background3 from "/public/apps.jpg";
 
 const PortfolioPage = () => {
   return (
-    <section className="py-28">
-      <div className="flex flex-col">
-        <h1 className="text-6xl text-center font-extrabold mb-4 lg:mb-8 lg:text-left md:text-8xl">
-          Our Work
-        </h1>
-        <h4 className="text-2xl text-center font-extrabold px-2 lg:text-left">
-          Choose a gallery
-        </h4>
-        <div className="flex justify-center lg:justify-start">
-          <div className="grid grid-cols-1 py-5 gap-10 md:grid-cols-2 lg:grid-cols-3">
-            <Card background={background1} text={"illustration"} />
-            <Card background={background2} text={"websites"} />
-            <Card background={background3} text={"apps"} />
-          </div>
+    <>
+      <h4 className="text-2xl text-center font-extrabold px-2 lg:text-left">
+        Choose a gallery
+      </h4>
+      <div className="flex justify-center lg:justify-start">
+        <div className="grid grid-cols-1 py-5 gap-10 md:grid-cols-2 lg:grid-cols-3">
+          <Card background={background1} text={"illustrations"} />
+          <Card background={background2} text={"websites"} />
+          <Card background={background3} text={"applications"} />
         </div>
       </div>
-    </section>
+    </>
   );
 };
 export default PortfolioPage;

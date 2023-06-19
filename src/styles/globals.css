@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media (min-width: 1024px) {
+  .portfolio__category-container:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
+}

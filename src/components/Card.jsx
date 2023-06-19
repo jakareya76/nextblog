@@ -10,7 +10,7 @@ const Card = ({ background, text }) => {
           alt="img"
           className="w-[280px] h-[452px] bg-no-repeat object-cover"
         />
-        <h3 className="text-4xl absolute bottom-2 left-2 text-gray-100 uppercase font-extrabold">
+        <h3 className="text-3xl absolute bottom-2 left-2 text-gray-100 uppercase font-extrabold">
           {text}
         </h3>
       </div>
