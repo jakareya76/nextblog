@@ -1,20 +1,27 @@
 import Image from "next/image";
 
-const BlogPost = () => {
+const getData = async (id) => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
+  if (!res.ok) {
+    throw new Error("Post Not Found");
+  }
+
+  return await res.json();
+};
+
+const BlogPost = async ({ params }) => {
+  const data = await getData(params.id);
+
   return (
     <section className="py-16 px-5">
-      <div className="flex flex-col-reverse items-center justify-center gap-8 lg:flex-row">
+      <div className="flex flex-col-reverse justify-center gap-8 lg:flex-row">
         <div className="flex flex-col w-full lg:w-1/2">
           <h2 className="text-3xl font-extrabold py-4 xl:text-5xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {data.title}
           </h2>
           <p className="py-4 mb-4 text-xs sm:text-sm md:text-md xl:text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-            aperiam debitis maiores, cupiditate iste neque quis repudiandae
-            dolor suscipit. Alias ea repudiandae, ducimus quos culpa illo
-            officiis quia. Ipsa, perferendis? Quod, ipsam doloribus repellendus
-            ratione ea dicta beatae molestiae officiis? Sequi nostrum totam,
-            quisquam minus perspiciatis voluptate velit harum obcaecati?
+            {data.body}
           </p>
           <div className="flex items-center gap-5">
             <Image

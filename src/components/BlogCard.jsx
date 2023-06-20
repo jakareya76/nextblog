@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const BlogCard = () => {
+const BlogCard = ({ title, body, id }) => {
   return (
-    <Link href="/blog/test">
+    <Link href={`/blog/${id}`}>
       <div className="flex flex-col items-center justify-center gap-10 lg:flex-row">
         <div className="relative w-full lg:w-1/4">
           <Image
@@ -15,17 +15,8 @@ const BlogCard = () => {
           />
         </div>
         <div className="w-full lg:w-3/4">
-          <h2 className="text-3xl font-extrabold max-w-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam,
-            suscipit?
-          </h2>
-          <p className="py-8 max-w-5xl">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo dolor
-            mollitia at possimus beatae tempore id sapiente ipsa maiores quam
-            nam ipsam vero architecto atque rem facere odio dolores, expedita
-            sit, neque molestias quas autem nesciunt. Neque temporibus quam a id
-            vel commodi, dolores culpa esse non quis, ea repellat!
-          </p>
+          <h2 className="text-3xl font-extrabold max-w-2xl">{title}</h2>
+          <p className="py-8 max-w-2xl">{body}</p>
         </div>
       </div>
     </Link>

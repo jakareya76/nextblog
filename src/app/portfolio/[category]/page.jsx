@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Button from "@/components/Button";
 import { CategoryItems } from "@/constants";
+import { notFound } from "next/navigation";
 
 const getData = (category) => {
   const data = CategoryItems[category];
 
-  if (!data) {
-    return [];
-  } else {
+  if (data) {
     return data;
   }
+
+  return notFound();
 };
 
 const Category = ({ params }) => {
