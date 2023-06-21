@@ -1,17 +1,17 @@
 import BlogCard from "@/components/BlogCard";
 
 const getData = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-
-  if (!res.ok) {
-    throw new Error("Post Not Found");
-  }
+  const res = await fetch("http://localhost:3000/api/posts", {
+    cache: "no-cache",
+  });
 
   return await res.json();
 };
 
 const BlogPage = async () => {
   const data = await getData();
+
+  console.log(data);
 
   return (
     <section className="py-16">
