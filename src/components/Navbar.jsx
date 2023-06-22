@@ -33,7 +33,7 @@ const Navbar = () => {
             className="bg-green-600 text-white px-4 py-2 rounded ml-2 mb-1 duration-200 hover:bg-green-700"
             onClick={() => console.log("Logout")}
           >
-            Logout
+            Login
           </button>
         </div>
 

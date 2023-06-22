@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AuthProvider from "@/components/AuthProvider";
 
 export const metadata = {
   title: "NextBlog",
@@ -18,9 +19,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`bg-[#111] text-[#bbb] ${inter.className}`}>
-        <Navbar />
-        <main className="container mx-auto">{children}</main>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <main className="container mx-auto">{children}</main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   );
