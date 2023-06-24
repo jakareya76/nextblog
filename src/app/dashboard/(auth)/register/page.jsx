@@ -2,11 +2,20 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 const RegisterPage = () => {
   const [err, setErr] = useState(false);
 
   const router = useRouter();
+  const session = useSession();
+
+  if (session.status === "loading") {
+    return <p>Loading...</p>;
+  }
+  if (session.status === "authenticated") {
+    router.push("/dashboard");
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();

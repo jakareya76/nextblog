@@ -3,12 +3,16 @@
 import { useState } from "react";
 
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
+
 import { links } from "@/constants";
 import Hamburger from "./Hamburger";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+
+  const session = useSession();
 
   return (
     <header className="container mx-auto w-full">
@@ -28,13 +32,21 @@ const Navbar = () => {
               </Link>
             );
           })}
-
-          <button
-            className="bg-green-600 text-white px-4 py-2 rounded ml-2 mb-1 duration-200 hover:bg-green-700"
-            onClick={() => console.log("Logout")}
-          >
-            Login
-          </button>
+          {session.status === "authenticated" ? (
+            <button
+              className="bg-green-600 text-white px-4 py-2 rounded ml-2 mb-1 duration-200 hover:bg-green-700"
+              onClick={() => signOut()}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/dashboard/login"
+              className="bg-green-600 text-white px-4 py-2 rounded ml-2 mb-1 duration-200 hover:bg-green-700"
+            >
+              Login
+            </Link>
+          )}
         </div>
 
         <Hamburger toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
