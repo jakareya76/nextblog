@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const LoginPage = () => {
@@ -43,9 +44,17 @@ const LoginPage = () => {
             Login
           </button>
         </form>
-        <p className="cursor-pointer" onClick={() => signIn("google")}>
-          Login With Google
-        </p>
+        <div className="flex flex-col gap-2">
+          <Link href="/dashboard/register" className="text-center underline">
+            Create A Account
+          </Link>
+          <button
+            className="cursor-pointer bg-zinc-700 text-white px-6 py-2 rounded"
+            onClick={() => signIn("google")}
+          >
+            Login With Google
+          </button>
+        </div>
       </div>
     </section>
   );

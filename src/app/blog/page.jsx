@@ -11,8 +11,6 @@ const getData = async () => {
 const BlogPage = async () => {
   const data = await getData();
 
-  console.log(data);
-
   return (
     <section className="py-16">
       <div className="flex flex-col items-center justify-center gap-16">

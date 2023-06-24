@@ -13,3 +13,15 @@ export async function GET(request, { params }) {
     throw new Error("Post Not Found");
   }
 }
+
+export async function DELETE(request, { params }) {
+  const { id } = params;
+  try {
+    await connect();
+
+    const post = await Post.findByIdAndDelete(id);
+    return NextResponse("Post Has Been Deleted", { status: 204 });
+  } catch (error) {
+    throw new Error("Post Not Found");
+  }
+}

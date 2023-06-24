@@ -18,8 +18,6 @@ const BlogPost = async ({ params }) => {
 
   const { title, desc, image, content, username } = data;
 
-  console.log(data);
-
   return (
     <section className="py-16 px-5">
       <div className="flex flex-col-reverse justify-center gap-8 lg:flex-row">
@@ -31,6 +29,7 @@ const BlogPost = async ({ params }) => {
           <div className="flex items-center gap-5">
             <Image
               src="/profile-icon.png"
+              alt="profile"
               width={50}
               height={50}
               className="object-cover rounded-full w-[50px] h-[50px]"

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 const RegisterPage = () => {
   const [err, setErr] = useState(false);
@@ -68,7 +69,9 @@ const RegisterPage = () => {
           </button>
         </form>
         {err && <p className="text-red-600 mb-5">Something went wrong</p>}
-        <p className="cursor-pointer">Login With An Existing Account</p>
+        <Link href="/dashboard/login" className="cursor-pointer">
+          Login With An Existing Account
+        </Link>
       </div>
     </section>
   );
