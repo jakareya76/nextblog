@@ -16,3 +16,19 @@ export async function GET(request) {
     return NextResponse.json({ error: "Internal Server Error" });
   }
 }
+
+export async function POST(request) {
+  const body = await request.json();
+
+  const newPost = new Post(body);
+
+  try {
+    await connect();
+
+    await newPost.save();
+
+    return NextResponse("Post Has Been Created", { status: 201 });
+  } catch (error) {
+    return NextResponse.json({ error: "Failed To Create New Post" });
+  }
+}
