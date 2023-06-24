@@ -3,10 +3,19 @@
 import { signIn } from "next-auth/react";
 
 const LoginPage = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const email = e.target[0].value;
+    const password = e.target[1].value;
+
+    signIn("credentials", { email, password });
+  };
+
   return (
     <section>
       <div className="flex flex-col items-center justify-center h-screen">
-        <form className="flex flex-col">
+        <form className="flex flex-col" onSubmit={handleSubmit}>
           <input
             type="email"
             placeholder="email"
@@ -23,7 +32,9 @@ const LoginPage = () => {
             Login
           </button>
         </form>
-        <p className="cursor-pointer">Login With Google</p>
+        <p className="cursor-pointer" onClick={() => signIn("google")}>
+          Login With Google
+        </p>
       </div>
     </section>
   );
