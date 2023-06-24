@@ -2,9 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 const getData = async (id) => {
-  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
-    cache: "no-cache",
-  });
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`);
 
   if (!res.ok) {
     return notFound();

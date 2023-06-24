@@ -65,7 +65,7 @@ const DashboardPage = () => {
   if (session.status === "authenticated") {
     return (
       <section className="py-28 px-2">
-        <div className="flex flex-col items-center justify-center gap-5 lg:flex-row">
+        <div className="flex flex-col gap-5 lg:flex-row">
           <div className="w-full lg:w-2/3 xl:w-1/2">
             {isLoading
               ? "Loading..."
@@ -73,7 +73,7 @@ const DashboardPage = () => {
                   return (
                     <div
                       key={post._id}
-                      className="flex flex-col justify-center items-center gap-5 my-8 sm:flex-row"
+                      className="flex flex-col items-center gap-5 my-8 sm:flex-row"
                     >
                       <Link href={`/blog/${post._id}`}>
                         <div className="flex">
@@ -82,6 +82,7 @@ const DashboardPage = () => {
                             alt="post"
                             width={200}
                             height={200}
+                            className="w-full h-full"
                           />
                         </div>
                       </Link>
